@@ -1,0 +1,6 @@
+<form #form="ngForm">
+<h1>Delete a post</h1>
+<p>Are you sure you want to delete the post?</p>
+<button class="submitBtn"pButton type="button" label="Yes" (click)="deletePost()"></button>
+<button class="submitBtn closeBtn"pButton type="button" label="No" (click)="closeModal()"></button>
+</form>

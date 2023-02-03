@@ -2,4 +2,32 @@
   <div class="surface-card border-bottom-1 surface-border px-6 overflow-auto">
     <h2 class="text-primary">Blog</h2>
   </div>
-</div>
+  <span class="title">Posts</span>
+  <button class="submitBtn"pButton type="button" label="Create Post" (click)="openSubmitModal()" ></button>
+  <p-table [value]="blogData" class="table" [style]="{width:'100%', float:'left'}">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>UserId</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+        <tr *ngFor="let data of blogData">
+            <td >{{data.id}}</td>
+            <td>{{data.userId}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.body}}</td>
+            <td>
+              <button (click)="openEditModal(data.title, data.body, data.id)" ><i class="pi pi-wrench"></i>
+              </button>
+              <button (click)="openDeleteModal(data.id)" ><i class="pi pi-times"></i>
+              </button>
+            </td>
+        </tr>
+    </ng-template>
+  </p-table>
+
+

@@ -1,0 +1,8 @@
+<form #form="ngForm">
+    <h1>Create a post</h1>
+    <input ngModel type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="title"
+    [ngModelOptions]="{standalone: true}" [ngStyle]="{'border-color': !title ? 'red' : 'grey'}">
+    <input ngModel type="text" class="form-control" id="body" placeholder="Body" [(ngModel)]="body" 
+    [ngModelOptions]="{standalone: true}" [ngStyle]="{'border-color': !body ? 'red' : 'grey'}">
+    <button class="submitBtn"pButton type="button" label="Submit" (click)="closeModal()" [disabled]="!title || !body"></button>
+    </form>
